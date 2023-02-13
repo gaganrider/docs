@@ -35,13 +35,17 @@ module.exports = Student;
 
 
 //write in app.js 
-// importing usermodel 
-const Student = require('path')//replace path with actual path
 
+
+require('./models/db');// replace the path where the database is created
+
+// now you can see 'mongooseconnected' in console
 
 
 
 //write in index.js
+// importing usermodel 
+const Student = require('path')//replace path with actual path
 //crud operations for mongoose
 
 // creating the data into database

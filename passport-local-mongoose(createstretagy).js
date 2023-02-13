@@ -5,6 +5,10 @@
 //for passport local mongoose (createstretagy)
 
 // npm i passport-local passport-local-mongoose
+// passport useses session so we also have to install express session 
+// npm i express-session
+// or just do it all at once
+// npm i passport passport-local-mongoose express-session
 
 
 //write in usermodel(js file where schema has to be created)
@@ -21,7 +25,7 @@ const session =require ('express-session')
 
 // line number 21 under express static
 app.use(session({
-    secrate:"dhoommachale",
+    secret:"dhoommachale",
     resave:false,
     saveUninitialized:false
 }))
@@ -33,8 +37,8 @@ passport.deserializeUser(Student.deserializeUser());
 
 // write in index.js
 const passport=require('passport')//importing passport
-const Student = require('path')//importing our schema rreplace path with actual path
-const Router  = require('express')
+const Student = require('path')//importing our schema replace path with actual path
+
 
 
 
@@ -43,15 +47,15 @@ passport.use(Student.createStrategy());
 
 
 // signup route
-Router.post('/signup',(req,res)=>{
-    const {name ,username,emai,password}=req.body; //getting these details from the frontend
-    Student.register({ name, username, mother, father, email, classs }, password)//registering our user in the database (writing the password saprately for salting hashing)(use then and catch as per your requirment)
+router.post('/signup',(req,res)=>{
+    const {name ,username,email,password}=req.body; //getting these details from the frontend
+    Student.register({ name, username, email}, password)//registering our user in the database (writing the password saprately for salting hashing)(use then and catch as per your requirment)
 })
 
 
 
 // signin route
-Router.post('/signin',passport.authenticate('local',{
+router.post('/signin',passport.authenticate('local',{
     successRedirect:'/succes-route',//user will get redirected to the succes route after getting authenticated
     failureRedirect:'/faliure-route',//user will get redirected to the faliure route if authentication falied
 })

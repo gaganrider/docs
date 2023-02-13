@@ -57,8 +57,8 @@ student.save()
 
 //orrr
 //when using passport local create stretagy
-const {name ,username,emai,password}=req.body;
-Student.register({ name, username, mother, father, email, classs }, password)
+const {name ,username,email,password}=req.body;
+Student.register({ name, username,email}, password)
 
 //in updation and deletion we have to find the document which is same as reading it the first argument is the filter which finds the data which is id email or username in most cases
 

@@ -31,7 +31,7 @@ const studentSchema =new mongoose.Schema({
 // export schema creating model
 const Student = mongoose.model("Student",studentSchema) //try to keep it in CAPS and in singuler form (do not put s in the end)
 
-module.exports = User;
+module.exports = Student;
 
 
 //write in app.js 

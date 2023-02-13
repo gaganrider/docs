@@ -34,7 +34,7 @@ passport.deserializeUser(Student.deserializeUser());
 // write in index.js
 const passport=require('passport')//importing passport
 const Student = require('path')//importing our schema rreplace path with actual path
-const { Router } = require('express')
+const Router  = require('express')
 
 
 

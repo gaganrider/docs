@@ -67,9 +67,22 @@ Student.register({ name, username, email, }, password)
 
 //in updation and deletion we have to find the document which is same as reading it the first argument is the filter which finds the data which is id email or username in most cases
 
+//serching or reading data
+Student.findOneAndUpdate({username: "john" }, //will find the data with username john in the database you can change the value or finding perameter like id and username(name k jaga id ya username likhdo) leaving the { } empty will show the whole database
+     null, function (err, docs) {
+    if (err){
+        console.log(err)
+    }
+    else{
+        console.log("Original Doc : ",docs);
+    }
+});
+
+
+
 // updating the data
 
-Student.findOneAndUpdate({username: "john" }, //will find the data with username john in the database you can the the value or finding perameter like id and username(name k jaga id ya username likhdo)
+Student.findOneAndUpdate({username: "john" }, //will find the data with username john in the database you can change the value or finding perameter like id and username(name k jaga id ya username likhdo)
     {name:"Anuj"}, null, function (err, docs) {// will update the name to anuj docs will contain the details of the user
     if (err){
         console.log(err)

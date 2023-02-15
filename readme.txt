@@ -4,13 +4,14 @@ type 'express --view=ejs foldername' to create an express application with ejs v
 
 prerequizites--
 basic understanding of
-express get and post routes,
-redirect, render,
-req, res,
-req.body etc.
 html forms,
 functions,
 import-export,
 if-else,
 try-catch-then,
 array-objacts,
+
+sequence--
+1.express
+2.mongo
+3.other things
